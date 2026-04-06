@@ -1,0 +1,20 @@
+# Simulation outputs
+sim/*.vvp
+sim/*.vcd
+sim/*.wlf
+
+# ModelSim
+work/
+transcript
+vsim.wlf
+modelsim.ini
+
+# Verilator
+obj_dir/
+
+# VS Code (optional — keep settings.json, ignore workspace cache)
+.vscode/ipch/
+
+# OS
+.DS_Store
+Thumbs.db

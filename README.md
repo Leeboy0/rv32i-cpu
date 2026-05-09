@@ -6,9 +6,9 @@ A RISC-V **RV32I** single-cycle CPU written in SystemVerilog, developed with a v
  
 ### v1.0 — Single-cycle complete
 
--[x] Basic Single Cycle Architecture 
--[x] Testbench Development 
--[ ] Test and profiling 
+- [x] Basic Single Cycle Architecture 
+- [x] Testbench Development 
+- [ ] Test and profiling 
 
 ### v2.0 — Classic 5-stage pipeline
  

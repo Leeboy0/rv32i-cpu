@@ -18,3 +18,4 @@ obj_dir/
 # OS
 .DS_Store
 Thumbs.db
+synth/build/

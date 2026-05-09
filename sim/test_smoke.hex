@@ -1,0 +1,6 @@
+// sim/test_smoke.hex
+// 5 + 3 = 8, store in x3, then loop forever
+00500093    // addi x1, x0, 5
+00300113    // addi x2, x0, 3
+002081B3    // add  x3, x1, x2
+0000006F    // jal  x0, 0   (loop forever)

@@ -12,9 +12,9 @@ A RISC-V **RV32I** single-cycle CPU written in SystemVerilog, developed with a v
 
 ### v2.0 — Classic 5-stage pipeline
  
-- [ ] Stage split: IF / ID / EX / MEM / WB with pipeline registers
-- [ ] Hazard detection unit
-- [ ] Forwarding / bypass network
+- [x] Stage split: IF / ID / EX / MEM / WB with pipeline registers
+- [x] Hazard detection unit
+- [x] Forwarding / bypass network
 - [ ] Re-run `riscv-tests` end-to-end
 
 **Author:** [@Leeboy0](https://github.com/Leeboy0)

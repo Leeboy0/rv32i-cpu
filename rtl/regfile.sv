@@ -18,7 +18,7 @@ module regfile (
 );
 
     // 32 registers x 32 bits
-    logic [31:0] regs [31:0];
+    logic [31:0] regs [0:31] /*verilator public_flat_rd*/;
 
     // ----------------------------------------------------------------
     // Synchronous write — clocked, with active-low reset

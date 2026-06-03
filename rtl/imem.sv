@@ -5,7 +5,7 @@
 
 module imem #(
     parameter int    DEPTH    = 4096,            // number of 32-bit words
-    parameter        HEX_FILE = "program.hex"     // initial contents
+    parameter        HEX_FILE = "sim/program.hex"     // initial contents
 ) (
     input  logic [31:0] addr,        // byte address (PC)
     output logic [31:0] instr

@@ -2,6 +2,7 @@
 sim/*.vvp
 sim/*.vcd
 sim/*.wlf
+*.vvp
 
 # ModelSim
 work/
@@ -19,3 +20,6 @@ obj_dir/
 .DS_Store
 Thumbs.db
 synth/build/
+
+# Doc and Help for developer
+docs/

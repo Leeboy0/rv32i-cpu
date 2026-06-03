@@ -90,7 +90,7 @@ module dmem #(
         endcase
     end
 
-    always_ff @(posedge clk) begin
+    always @(posedge clk) begin
         if (we) mem[word_idx] <= write_word;
     end
 

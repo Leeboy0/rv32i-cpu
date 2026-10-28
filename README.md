@@ -80,7 +80,7 @@ sim/            Test programs (.hex) and simulation outputs
 
 | Purpose | Tool |
 |---|---|
-| Module testbenches | Icarus Verilog (`iverilog`, `vvp`) with `-g2012` |
+| Module testbenches | Verilator |
 | UVM simulation | Siemens Questa (tested with Questa FSE / Altera Starter, UVM 1.2) |
 | Synthesis | `sv2v`, Yosys, Sky130 standard-cell Liberty file |
 | Timing | OpenSTA |
@@ -91,13 +91,12 @@ sim/            Test programs (.hex) and simulation outputs
 Run from the repository root:
 
 ```bash
-iverilog -g2012 -o sim/tb_alu.vvp tb/tb_alu.sv rtl/alu.sv
-vvp sim/tb_alu.vvp
+verilator --binary -j 0 --top-module tb_alu tb_alu.sv ../rtl/alu.sv
+./obj_dir/Vtb_alu
 
 # Full CPU running sim/program.hex
-iverilog -g2012 -o sim/tb_cpu.vvp tb/tb_cpu.sv rtl/*.sv
-vvp sim/tb_cpu.vvp
-gtkwave sim/tb_cpu.vcd
+verilator --binary -j 0 --top-module tb_cpu tb_cpu.sv ../rtl/*.sv
+./obj_dir/Vtb_cpu
 ```
 
 ### UVM

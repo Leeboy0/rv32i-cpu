@@ -1,4 +1,4 @@
-# RV32I Single-Cycle Processor
+# RV32I in order pipelined Processor
  
 A RISC-V **RV32I** single-cycle CPU written in SystemVerilog, developed with a verification-first methodology. Each module is paired with a self-checking testbench (In progress). 
 

@@ -20,7 +20,9 @@ RTL_SRCS  = $(RTL_DIR)/alu.sv        \
             $(RTL_DIR)/dmem.sv        \
             $(RTL_DIR)/cpu.sv
 
-UVM_SRCS  = cpu_if.sv cpu_pkg.sv tb_top.sv
+UVM_DIRS  = agent ref_model env seq tests tb
+UVM_INCS  = $(wildcard $(addsuffix /*.sv,$(UVM_DIRS)))   # `included by cpu_pkg.sv
+UVM_SRCS  = tb/cpu_if.sv cpu_pkg.sv tb/tb_top.sv
 
 # ── Siemens Questa FSE (Altera Starter), invoked from WSL ─────────────
 QUESTA_HOME ?= /mnt/c/altera_lite/25.1std/questa_fse
@@ -29,10 +31,11 @@ VLIB = $(QUESTA_HOME)/win64/vlib.exe
 VLOG = $(QUESTA_HOME)/win64/vlog.exe
 VSIM = $(QUESTA_HOME)/win64/vsim.exe
 
-questa: $(RTL_SRCS) $(UVM_SRCS)
+questa: $(RTL_SRCS) $(UVM_SRCS) $(UVM_INCS)
 	$(VLIB) work
 	$(VLOG) -sv -mfcu -suppress 12110 \
 	    +incdir+$(shell wslpath -m $(UVM_SRC)) \
+	    $(foreach d,$(UVM_DIRS),+incdir+$(d)) \
 	    $(shell wslpath -m $(UVM_SRC)/uvm_pkg.sv) \
 	    $(foreach f,$(RTL_SRCS),$(shell wslpath -m $(f))) \
 	    $(foreach f,$(UVM_SRCS),$(shell wslpath -m $(f)))

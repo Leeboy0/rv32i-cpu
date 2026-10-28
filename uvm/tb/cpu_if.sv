@@ -1,4 +1,4 @@
-// uvm/cpu_if.sv — SystemVerilog interface wrapping all DUT I/O
+// uvm/tb/cpu_if.sv — SystemVerilog interface wrapping all DUT I/O
 `timescale 1ns/1ps
 //
 // Responsibilities:

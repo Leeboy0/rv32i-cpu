@@ -1,4 +1,4 @@
-// uvm/tb_top.sv — UVM testbench top-level module
+// uvm/tb/tb_top.sv — UVM testbench top-level module
 //
 // Responsibilities:
 //   1. Generate clock and instantiate the DUT + interface.
